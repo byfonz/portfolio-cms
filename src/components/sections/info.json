@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_sections_infos",
+  "info": {
+    "displayName": "Info"
+  },
+  "options": {},
+  "attributes": {
+    "bio": {
+      "type": "text"
+    },
+    "description": {
+      "type": "text"
+    },
+    "approach": {
+      "type": "text"
+    },
+    "experience": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::experience.experience"
+    }
+  },
+  "config": {}
+}

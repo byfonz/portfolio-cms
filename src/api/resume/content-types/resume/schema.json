@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "resumes",
+  "info": {
+    "singularName": "resume",
+    "pluralName": "resumes",
+    "displayName": "Resume"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "experience": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::experience.experience",
+      "mappedBy": "resume"
+    },
+    "education": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::education.education"
+    },
+    "skill": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::skill.skill"
+    },
+    "job_description": {
+      "type": "richtext"
+    },
+    "ai_suggestions": {
+      "type": "richtext"
+    }
+  }
+}

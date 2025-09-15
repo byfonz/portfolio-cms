@@ -11,6 +11,17 @@ export interface ComponentsButton extends Struct.ComponentSchema {
   };
 }
 
+export interface ComponentsFaqItem extends Struct.ComponentSchema {
+  collectionName: 'components_components_faq_items';
+  info: {
+    displayName: 'FAQ Item';
+  };
+  attributes: {
+    answer: Schema.Attribute.Text;
+    question: Schema.Attribute.String;
+  };
+}
+
 export interface ComponentsLink extends Struct.ComponentSchema {
   collectionName: 'components_components_links';
   info: {
@@ -20,6 +31,24 @@ export interface ComponentsLink extends Struct.ComponentSchema {
   attributes: {
     name: Schema.Attribute.String;
     url: Schema.Attribute.String;
+  };
+}
+
+export interface ComponentsServices extends Struct.ComponentSchema {
+  collectionName: 'components_components_services';
+  info: {
+    displayName: 'Services';
+  };
+  attributes: {
+    background_image: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    description: Schema.Attribute.Text;
+    icon: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    title: Schema.Attribute.String;
   };
 }
 
@@ -48,6 +77,16 @@ export interface SectionsContact extends Struct.ComponentSchema {
     cta_buttons: Schema.Attribute.Component<'components.button', true>;
     description: Schema.Attribute.Text;
     title: Schema.Attribute.String;
+  };
+}
+
+export interface SectionsFaQs extends Struct.ComponentSchema {
+  collectionName: 'components_sections_fa_qs';
+  info: {
+    displayName: 'FAQs';
+  };
+  attributes: {
+    faq: Schema.Attribute.Component<'components.faq-item', true>;
   };
 }
 
@@ -80,6 +119,22 @@ export interface SectionsImageGallery extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionsInfo extends Struct.ComponentSchema {
+  collectionName: 'components_sections_infos';
+  info: {
+    displayName: 'Info';
+  };
+  attributes: {
+    approach: Schema.Attribute.Text;
+    bio: Schema.Attribute.Text;
+    description: Schema.Attribute.Text;
+    experience: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::experience.experience'
+    >;
+  };
+}
+
 export interface SectionsProjectShowcase extends Struct.ComponentSchema {
   collectionName: 'components_sections_project_showcases';
   info: {
@@ -107,11 +162,15 @@ declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'components.button': ComponentsButton;
+      'components.faq-item': ComponentsFaqItem;
       'components.link': ComponentsLink;
+      'components.services': ComponentsServices;
       'components.social-link': ComponentsSocialLink;
       'sections.contact': SectionsContact;
+      'sections.fa-qs': SectionsFaQs;
       'sections.hero': SectionsHero;
       'sections.image-gallery': SectionsImageGallery;
+      'sections.info': SectionsInfo;
       'sections.project-showcase': SectionsProjectShowcase;
       'sections.text-block': SectionsTextBlock;
     }

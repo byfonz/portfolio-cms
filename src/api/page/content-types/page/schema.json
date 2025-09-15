@@ -33,7 +33,10 @@
         "sections.text-block",
         "sections.image-gallery",
         "sections.project-showcase",
-        "sections.contact"
+        "sections.contact",
+        "components.services",
+        "sections.info",
+        "sections.fa-qs"
       ]
     }
   }

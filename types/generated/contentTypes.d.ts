@@ -512,8 +512,40 @@ export interface ApiExperienceExperience extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    resume: Schema.Attribute.Relation<'manyToOne', 'api::resume.resume'>;
     role: Schema.Attribute.String;
     start_date: Schema.Attribute.Date;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiFooterFooter extends Struct.SingleTypeSchema {
+  collectionName: 'footers';
+  info: {
+    displayName: 'Footer';
+    pluralName: 'footers';
+    singularName: 'footer';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    contact: Schema.Attribute.Component<'components.social-link', true>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    heading: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::footer.footer'
+    > &
+      Schema.Attribute.Private;
+    navigation: Schema.Attribute.Component<'components.link', true>;
+    publishedAt: Schema.Attribute.DateTime;
+    subheading: Schema.Attribute.Text;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -579,6 +611,9 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
         'sections.image-gallery',
         'sections.project-showcase',
         'sections.contact',
+        'components.services',
+        'sections.info',
+        'sections.fa-qs',
       ]
     > &
       Schema.Attribute.SetPluginOptions<{
@@ -623,6 +658,45 @@ export interface ApiProjectProject extends Struct.CollectionTypeSchema {
     publishedAt: Schema.Attribute.DateTime;
     slug: Schema.Attribute.String;
     stack: Schema.Attribute.Relation<'oneToMany', 'api::skill.skill'>;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiResumeResume extends Struct.CollectionTypeSchema {
+  collectionName: 'resumes';
+  info: {
+    displayName: 'Resume';
+    pluralName: 'resumes';
+    singularName: 'resume';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    ai_suggestions: Schema.Attribute.RichText;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    education: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::education.education'
+    >;
+    experience: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::experience.experience'
+    >;
+    job_description: Schema.Attribute.RichText;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::resume.resume'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    skill: Schema.Attribute.Relation<'oneToOne', 'api::skill.skill'>;
     title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -1183,9 +1257,11 @@ declare module '@strapi/strapi' {
       'api::blog.blog': ApiBlogBlog;
       'api::education.education': ApiEducationEducation;
       'api::experience.experience': ApiExperienceExperience;
+      'api::footer.footer': ApiFooterFooter;
       'api::navbar.navbar': ApiNavbarNavbar;
       'api::page.page': ApiPagePage;
       'api::project.project': ApiProjectProject;
+      'api::resume.resume': ApiResumeResume;
       'api::skill.skill': ApiSkillSkill;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;

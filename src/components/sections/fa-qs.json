@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_sections_fa_qs",
+  "info": {
+    "displayName": "FAQs"
+  },
+  "options": {},
+  "attributes": {
+    "faq": {
+      "type": "component",
+      "component": "components.faq-item",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}
