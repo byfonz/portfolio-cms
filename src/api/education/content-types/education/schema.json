@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "blogs",
+  "collectionName": "educations",
   "info": {
-    "singularName": "blog",
-    "pluralName": "blogs",
-    "displayName": "Blog"
+    "singularName": "education",
+    "pluralName": "educations",
+    "displayName": "Education"
   },
   "options": {
     "draftAndPublish": true
@@ -15,7 +15,7 @@
     }
   },
   "attributes": {
-    "title": {
+    "school": {
       "type": "string",
       "pluginOptions": {
         "i18n": {
@@ -23,7 +23,7 @@
         }
       }
     },
-    "slug": {
+    "degree": {
       "type": "string",
       "pluginOptions": {
         "i18n": {
@@ -31,23 +31,24 @@
         }
       }
     },
-    "cover_image": {
-      "type": "media",
+    "start_date": {
+      "type": "date",
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      },
-      "multiple": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
+      }
     },
-    "content": {
-      "type": "blocks",
+    "end_date": {
+      "type": "date",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "description": {
+      "type": "richtext",
       "pluginOptions": {
         "i18n": {
           "localized": true

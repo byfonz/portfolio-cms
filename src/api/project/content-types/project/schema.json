@@ -27,6 +27,21 @@
         "videos",
         "audios"
       ]
+    },
+    "featured": {
+      "type": "boolean"
+    },
+    "stack": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::skill.skill",
+      "mappedBy": "project"
+    },
+    "link_demo": {
+      "type": "string"
+    },
+    "link_github": {
+      "type": "string"
     }
   }
 }

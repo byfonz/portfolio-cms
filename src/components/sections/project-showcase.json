@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_sections_project_showcases",
+  "info": {
+    "displayName": "Project Showcase"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "projects": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::project.project"
+    }
+  },
+  "config": {}
+}
