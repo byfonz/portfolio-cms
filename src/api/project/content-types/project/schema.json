@@ -42,6 +42,15 @@
     },
     "link_github": {
       "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "case_study": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::case-study.case-study",
+      "mappedBy": "project"
     }
   }
 }

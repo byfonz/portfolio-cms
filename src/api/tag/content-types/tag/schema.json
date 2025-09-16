@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "skills",
+  "collectionName": "tags",
   "info": {
-    "singularName": "skill",
-    "pluralName": "skills",
-    "displayName": "Skill"
+    "singularName": "tag",
+    "pluralName": "tags",
+    "displayName": "Tag"
   },
   "options": {
     "draftAndPublish": true
@@ -23,7 +23,15 @@
         }
       }
     },
-    "category": {
+    "slug": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "type": {
       "type": "enumeration",
       "pluginOptions": {
         "i18n": {
@@ -31,17 +39,11 @@
         }
       },
       "enum": [
-        "Marketing",
-        "Design",
-        "Web",
-        "Tool"
+        "Technology",
+        "Industry",
+        "Service",
+        "Keyword"
       ]
-    },
-    "project": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::project.project",
-      "inversedBy": "stack"
     }
   }
 }

@@ -35,6 +35,9 @@
     },
     "ai_suggestions": {
       "type": "richtext"
+    },
+    "url": {
+      "type": "string"
     }
   }
 }
