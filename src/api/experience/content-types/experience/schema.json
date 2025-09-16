@@ -11,8 +11,10 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "company": {
-      "type": "string"
+    "client": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::client.client"
     },
     "role": {
       "type": "string"
