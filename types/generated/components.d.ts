@@ -65,6 +65,22 @@ export interface ComponentsSocialLink extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionsCaseStudy extends Struct.ComponentSchema {
+  collectionName: 'components_sections_case_studies';
+  info: {
+    displayName: 'Case Study';
+  };
+  attributes: {
+    achievements: Schema.Attribute.RichText;
+    challenges: Schema.Attribute.RichText;
+    overview: Schema.Attribute.Text;
+    results: Schema.Attribute.RichText;
+    skills: Schema.Attribute.Relation<'oneToMany', 'api::skill.skill'>;
+    solution: Schema.Attribute.RichText;
+    tasks: Schema.Attribute.RichText;
+  };
+}
+
 export interface SectionsContact extends Struct.ComponentSchema {
   collectionName: 'components_sections_contacts';
   info: {
@@ -166,6 +182,7 @@ declare module '@strapi/strapi' {
       'components.link': ComponentsLink;
       'components.services': ComponentsServices;
       'components.social-link': ComponentsSocialLink;
+      'sections.case-study': SectionsCaseStudy;
       'sections.contact': SectionsContact;
       'sections.fa-qs': SectionsFaQs;
       'sections.hero': SectionsHero;

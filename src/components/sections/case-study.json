@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_sections_case_studies",
+  "info": {
+    "displayName": "Case Study"
+  },
+  "options": {},
+  "attributes": {
+    "overview": {
+      "type": "text"
+    },
+    "tasks": {
+      "type": "richtext"
+    },
+    "challenges": {
+      "type": "richtext"
+    },
+    "solution": {
+      "type": "richtext"
+    },
+    "results": {
+      "type": "richtext"
+    },
+    "achievements": {
+      "type": "richtext"
+    },
+    "skills": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::skill.skill"
+    }
+  },
+  "config": {}
+}

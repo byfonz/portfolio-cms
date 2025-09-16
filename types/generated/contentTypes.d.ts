@@ -472,7 +472,6 @@ export interface ApiCaseStudyCaseStudy extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
-    project: Schema.Attribute.Relation<'oneToOne', 'api::project.project'>;
     publishedAt: Schema.Attribute.DateTime;
     results: Schema.Attribute.RichText &
       Schema.Attribute.SetPluginOptions<{
@@ -719,17 +718,14 @@ export interface ApiProjectProject extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    case_study: Schema.Attribute.Relation<
-      'oneToOne',
-      'api::case-study.case-study'
-    >;
+    case_study: Schema.Attribute.Component<'sections.case-study', false>;
     cover_image: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios'
     >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    description: Schema.Attribute.RichText;
+    description: Schema.Attribute.String;
     featured: Schema.Attribute.Boolean;
     link_demo: Schema.Attribute.String;
     link_github: Schema.Attribute.String;

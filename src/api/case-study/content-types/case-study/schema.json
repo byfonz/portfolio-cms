@@ -82,12 +82,6 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::tag.tag"
-    },
-    "project": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::project.project",
-      "inversedBy": "case_study"
     }
   }
 }
