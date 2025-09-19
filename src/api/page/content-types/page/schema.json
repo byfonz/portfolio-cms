@@ -38,6 +38,11 @@
         "sections.info",
         "sections.fa-qs"
       ]
+    },
+    "project": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::project.project"
     }
   }
 }
