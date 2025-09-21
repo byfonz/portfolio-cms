@@ -525,6 +525,7 @@ export interface ApiClientClient extends Struct.CollectionTypeSchema {
       'api::client.client'
     > &
       Schema.Attribute.Private;
+    logo: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     name: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
