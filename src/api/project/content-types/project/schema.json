@@ -36,12 +36,6 @@
       "relation": "oneToOne",
       "target": "api::client.client"
     },
-    "stack": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::skill.skill",
-      "mappedBy": "project"
-    },
     "link_demo": {
       "type": "string"
     },
@@ -55,6 +49,11 @@
     },
     "description": {
       "type": "string"
+    },
+    "tags": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::tag.tag"
     }
   }
 }

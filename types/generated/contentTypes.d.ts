@@ -769,7 +769,7 @@ export interface ApiProjectProject extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     slug: Schema.Attribute.String;
-    stack: Schema.Attribute.Relation<'oneToMany', 'api::skill.skill'>;
+    tags: Schema.Attribute.Relation<'oneToMany', 'api::tag.tag'>;
     title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -903,7 +903,6 @@ export interface ApiSkillSkill extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
-    project: Schema.Attribute.Relation<'manyToOne', 'api::project.project'>;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -946,7 +945,7 @@ export interface ApiTagTag extends Struct.CollectionTypeSchema {
         };
       }>;
     type: Schema.Attribute.Enumeration<
-      ['Technology', 'Industry', 'Service', 'Keyword']
+      ['Technology', 'Industry', 'Service', 'Keyword', 'Skill']
     > &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
