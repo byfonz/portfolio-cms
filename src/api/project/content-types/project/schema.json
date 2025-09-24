@@ -31,6 +31,9 @@
     "featured": {
       "type": "boolean"
     },
+    "year": {
+      "type": "date"
+    },
     "client": {
       "type": "relation",
       "relation": "oneToOne",

@@ -4,7 +4,7 @@
   "info": {
     "singularName": "navbar",
     "pluralName": "navbars",
-    "displayName": "Navigation"
+    "displayName": "Header"
   },
   "options": {
     "draftAndPublish": true
@@ -21,7 +21,7 @@
         "audios"
       ]
     },
-    "pages": {
+    "menu": {
       "type": "component",
       "component": "components.link",
       "repeatable": true

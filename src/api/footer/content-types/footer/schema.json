@@ -17,7 +17,7 @@
     "subheading": {
       "type": "text"
     },
-    "navigation": {
+    "menu": {
       "type": "component",
       "component": "components.link",
       "repeatable": true

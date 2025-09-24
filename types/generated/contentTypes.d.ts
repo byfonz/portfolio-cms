@@ -651,7 +651,7 @@ export interface ApiFooterFooter extends Struct.SingleTypeSchema {
       'api::footer.footer'
     > &
       Schema.Attribute.Private;
-    navigation: Schema.Attribute.Component<'components.link', true>;
+    menu: Schema.Attribute.Component<'components.link', true>;
     publishedAt: Schema.Attribute.DateTime;
     subheading: Schema.Attribute.Text;
     updatedAt: Schema.Attribute.DateTime;
@@ -663,7 +663,7 @@ export interface ApiFooterFooter extends Struct.SingleTypeSchema {
 export interface ApiNavbarNavbar extends Struct.SingleTypeSchema {
   collectionName: 'navbars';
   info: {
-    displayName: 'Navigation';
+    displayName: 'Header';
     pluralName: 'navbars';
     singularName: 'navbar';
   };
@@ -682,7 +682,7 @@ export interface ApiNavbarNavbar extends Struct.SingleTypeSchema {
     > &
       Schema.Attribute.Private;
     logo: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    pages: Schema.Attribute.Component<'components.link', true>;
+    menu: Schema.Attribute.Component<'components.link', true>;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -774,6 +774,7 @@ export interface ApiProjectProject extends Struct.CollectionTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    year: Schema.Attribute.Date;
   };
 }
 
