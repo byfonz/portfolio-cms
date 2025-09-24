@@ -751,6 +751,7 @@ export interface ApiProjectProject extends Struct.CollectionTypeSchema {
   attributes: {
     case_study: Schema.Attribute.Component<'sections.case-study', false>;
     client: Schema.Attribute.Relation<'oneToOne', 'api::client.client'>;
+    company: Schema.Attribute.Relation<'oneToOne', 'api::client.client'>;
     cover_image: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios'
     >;

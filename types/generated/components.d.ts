@@ -76,7 +76,7 @@ export interface SectionsCaseStudy extends Struct.ComponentSchema {
     intro: Schema.Attribute.Text;
     overview: Schema.Attribute.Text;
     results: Schema.Attribute.RichText;
-    services: Schema.Attribute.Relation<'oneToOne', 'api::tag.tag'>;
+    services: Schema.Attribute.Relation<'oneToMany', 'api::tag.tag'>;
     solution: Schema.Attribute.RichText;
     tasks: Schema.Attribute.RichText;
   };
