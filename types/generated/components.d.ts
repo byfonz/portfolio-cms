@@ -60,6 +60,7 @@ export interface ComponentsSocialLink extends Struct.ComponentSchema {
   };
   attributes: {
     icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    name: Schema.Attribute.String;
     platform: Schema.Attribute.String;
     url: Schema.Attribute.String;
   };

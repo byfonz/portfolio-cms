@@ -6,6 +6,9 @@
   },
   "options": {},
   "attributes": {
+    "name": {
+      "type": "string"
+    },
     "url": {
       "type": "string"
     },
