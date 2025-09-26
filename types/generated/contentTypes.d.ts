@@ -640,11 +640,12 @@ export interface ApiFooterFooter extends Struct.SingleTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    contact: Schema.Attribute.Component<'components.social-link', true>;
+    contact: Schema.Attribute.Component<'components.link', true>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     heading: Schema.Attribute.String;
+    links: Schema.Attribute.Component<'components.social-link', true>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -671,6 +672,7 @@ export interface ApiNavbarNavbar extends Struct.SingleTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    contact: Schema.Attribute.Component<'components.link', true>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

@@ -184,7 +184,9 @@ export interface SectionsServices extends Struct.ComponentSchema {
     displayName: 'Services';
   };
   attributes: {
+    heading: Schema.Attribute.String;
     services: Schema.Attribute.Relation<'oneToMany', 'api::tag.tag'>;
+    subheading: Schema.Attribute.Text;
   };
 }
 
@@ -194,7 +196,9 @@ export interface SectionsSkills extends Struct.ComponentSchema {
     displayName: 'Skills';
   };
   attributes: {
+    heading: Schema.Attribute.String;
     skills: Schema.Attribute.Relation<'oneToMany', 'api::tag.tag'>;
+    subheading: Schema.Attribute.Text;
   };
 }
 

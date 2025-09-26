@@ -22,9 +22,14 @@
       "component": "components.link",
       "repeatable": true
     },
-    "contact": {
+    "links": {
       "type": "component",
       "component": "components.social-link",
+      "repeatable": true
+    },
+    "contact": {
+      "type": "component",
+      "component": "components.link",
       "repeatable": true
     }
   }
