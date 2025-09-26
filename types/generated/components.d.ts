@@ -98,6 +98,19 @@ export interface SectionsContact extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionsExperiences extends Struct.ComponentSchema {
+  collectionName: 'components_sections_experiences';
+  info: {
+    displayName: 'Experiences';
+  };
+  attributes: {
+    experiences: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::experience.experience'
+    >;
+  };
+}
+
 export interface SectionsFaQs extends Struct.ComponentSchema {
   collectionName: 'components_sections_fa_qs';
   info: {
@@ -165,6 +178,26 @@ export interface SectionsProjectShowcase extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionsServices extends Struct.ComponentSchema {
+  collectionName: 'components_sections_services';
+  info: {
+    displayName: 'Services';
+  };
+  attributes: {
+    services: Schema.Attribute.Relation<'oneToMany', 'api::tag.tag'>;
+  };
+}
+
+export interface SectionsSkills extends Struct.ComponentSchema {
+  collectionName: 'components_sections_skills';
+  info: {
+    displayName: 'Skills';
+  };
+  attributes: {
+    skills: Schema.Attribute.Relation<'oneToMany', 'api::tag.tag'>;
+  };
+}
+
 export interface SectionsTextBlock extends Struct.ComponentSchema {
   collectionName: 'components_sections_text_blocks';
   info: {
@@ -186,11 +219,14 @@ declare module '@strapi/strapi' {
       'components.social-link': ComponentsSocialLink;
       'sections.case-study': SectionsCaseStudy;
       'sections.contact': SectionsContact;
+      'sections.experiences': SectionsExperiences;
       'sections.fa-qs': SectionsFaQs;
       'sections.hero': SectionsHero;
       'sections.image-gallery': SectionsImageGallery;
       'sections.info': SectionsInfo;
       'sections.project-showcase': SectionsProjectShowcase;
+      'sections.services': SectionsServices;
+      'sections.skills': SectionsSkills;
       'sections.text-block': SectionsTextBlock;
     }
   }

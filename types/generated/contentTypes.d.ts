@@ -720,9 +720,11 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
         'sections.image-gallery',
         'sections.project-showcase',
         'sections.contact',
-        'components.services',
         'sections.info',
         'sections.fa-qs',
+        'sections.experiences',
+        'sections.skills',
+        'sections.services',
       ]
     > &
       Schema.Attribute.SetPluginOptions<{

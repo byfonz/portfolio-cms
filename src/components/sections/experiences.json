@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_sections_experiences",
+  "info": {
+    "displayName": "Experiences"
+  },
+  "options": {},
+  "attributes": {
+    "experiences": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::experience.experience"
+    }
+  },
+  "config": {}
+}
